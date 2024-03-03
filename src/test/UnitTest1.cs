@@ -1,4 +1,4 @@
-namespace WeatherForecast;
+namespace WeatherForecastTest;
 
 public class UnitTest1
 {
