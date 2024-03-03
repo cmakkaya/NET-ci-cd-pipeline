@@ -6,7 +6,7 @@ phases:
   build:
     commands:
       - dotnet build src/WeatherForecast.csproj
-      - dotnet test test/WeatherForecastTest.csproj --logger trx --results-directory ./testresults
+      - dotnet test test/WeatherForecast.csproj --logger trx --results-directory ./testresults
   post_build:
     commands:
       - dotnet publish -r linux-x64 src/WeatherForecast.csproj
