@@ -7,16 +7,18 @@ phases:
     commands:
       - dotnet build src/WeatherForecast.csproj
       - dotnet test test/WeatherForecastTest.csproj --logger trx --results-directory ./testresults
-    reports:
-      dotnetcicdtest:
-        files:
-          - '**/*'
-        base-directory: './testresults'
-        file-format: VisualStudioTrx
   post_build:
     commands:
       - dotnet publish -r linux-x64 src/WeatherForecast.csproj
+reports:
+  dotnetcicdtest:
+    files:
+      - '**/*'
+    base-directory: './testresults'
+    file-format: VisualStudioTrx        
 artifacts:  
   files:
     - src/bin/Debug/net8.0/**/*
   discard-paths: yes
+
+
