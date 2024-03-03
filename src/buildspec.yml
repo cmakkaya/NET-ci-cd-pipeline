@@ -11,6 +11,7 @@ phases:
     commands:
       - dotnet publish -r linux-x64 src/WeatherForecast.csproj
   reports:
+    phase_name: build
     dotnetcicdtest:
       files:
         - '**/*'
